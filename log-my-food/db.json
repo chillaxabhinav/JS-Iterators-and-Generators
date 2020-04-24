@@ -1,0 +1,34 @@
+{
+    "food":[
+        {
+            "id" : 1,
+            "name" : "Apple",
+            "calories" : 88,
+            "serving_size" : 6,
+            "serving_size_units" : "oz"
+        },
+        {
+            "id": 2,
+            "name": "Chicken Breast",
+            "calories": 125,
+            "serving_size": 3,
+            "serving_size_units": "oz"
+        },
+        {
+            "id": 3,
+            "name": "Whole Milk",
+            "calories": 240,
+            "serving_size": 8,
+            "serving_size_units": "oz"
+        }
+    ],
+
+    "users" :[
+        {
+            "id" : 1,
+            "firstname" : "Abhinav",
+            "lastname" : "Singh",
+            "email" : "abc@gmail.com"
+        }
+    ]
+}
