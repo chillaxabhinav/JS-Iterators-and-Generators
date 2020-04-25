@@ -64,3 +64,28 @@ myMap.set('key2','value2');
 //     console.log(res.value);
 //     res = it.next();
 // }
+
+
+
+// ================== Generators ================== //
+
+
+
+function *mygen(){
+    var ts = Date.now();
+    console.log('Original ts: ',ts);
+    yield ts;
+    console.log('Waiting');
+    var additionalTime = yield;
+    console.log('Additional Time: ', additionalTime);
+    if(additionalTime){
+        ts = ts + additionalTime;
+    }
+    console.log(ts);
+}
+
+const it = mygen();
+let originalTs = it.next();
+console.log(originalTs);
+it.next();
+it.next(1000);
