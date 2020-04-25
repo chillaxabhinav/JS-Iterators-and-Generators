@@ -2,7 +2,7 @@
 
 // ==================== Iterators ==================== //
 
-// Below I have defined my own iterator
+// ========== Below I have defined my own iterator
 
 function myIterator(start, finish){
     let index = start;
@@ -35,9 +35,9 @@ function myIterator(start, finish){
 // }
 
 
-// Using build in iterables to create iterators
+// ====================== Using build in iterables to create iterators
 
-// 1. Using Array iterable
+// ============== 1. Using Array iterable
 
 const arr = [0,2,4,6];
 
@@ -50,7 +50,7 @@ const arr = [0,2,4,6];
 //     res = it.next();
 // }
 
-// 2. Using Map Iterable
+// =============== 2. Using Map Iterable
 
 const myMap = new Map();
 myMap.set('key1','value1');
@@ -84,8 +84,34 @@ function *mygen(){
     console.log(ts);
 }
 
-const it = mygen();
-let originalTs = it.next();
-console.log(originalTs);
-it.next();
-it.next(1000);
+// const it = mygen();
+// let originalTs = it.next();
+// console.log(originalTs);
+// it.next();
+// it.next(1000);
+
+
+
+// ============== Yield Delegation
+
+
+// function *gen1(){
+//     yield 1;
+//     yield 2;
+//     console.log('Gen1 finished');
+// }
+
+function gen1(){
+    return ['three','two','one'];
+}
+
+function *gen2(){
+    yield* gen1();
+    console.log('Gen2 finished');
+}
+
+const it = gen2();
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+// it.next();
