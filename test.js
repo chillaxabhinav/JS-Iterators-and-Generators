@@ -111,7 +111,44 @@ function *gen2(){
 }
 
 const it = gen2();
-console.log(it.next());
-console.log(it.next());
-console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
 // it.next();
+
+
+// ============== Using throw in generator
+
+
+
+function* errorHandling(){
+    try{
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+const my = errorHandling();
+// console.log(my.next());
+// it.throw('Error thrown');
+// console.log(my.next());
+
+
+// ============= Using return in generator
+
+
+
+function* willReturn(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const yo = willReturn();
+console.log(yo.next());
+yo.return();
+console.log(yo.next());
